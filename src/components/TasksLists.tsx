@@ -16,18 +16,18 @@ const TasksList: FC<{ taskList: task[], setTasks: React.Dispatch<React.SetStateA
     const deleteTask = (id: number) => {
         setTasks((prev: any) => prev.filter((task: task) => task.id !== id));
       }
+    //Toggle the checkbox to mark tasks as completed.
+    const toggleCompleted = (id: number) => {
 
-      const toggleCompleted = (id: number) => {
-    
-        setTasks(
-            taskList.map((task: task) => {
-            if(task.id === id) {
-              return {...task, completed: !task.completed}
-            }
-            return task;
-          })
-        );
-      }
+    setTasks(
+        taskList.map((task: task) => {
+        if(task.id === id) {
+            return {...task, completed: !task.completed}
+        }
+        return task;
+        })
+    );
+    }
   return (
     <>
         <div className={styles.scrollingList}>
