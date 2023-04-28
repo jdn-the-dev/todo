@@ -16,7 +16,6 @@ export default function Home() {
   }
 
 
-
 	return (
 		<main className={styles.main}>
 			<h1 className={styles.heading}>TO-DO</h1>
@@ -35,7 +34,6 @@ export default function Home() {
           setEditStatus={setEditStatus}
         />
         {tasks?.length > 0 && <div style={{color:'#000'}}>{tasks.length} item(s)</div>}
-        
         <TasksList 
           taskList = {tasks}
           setTasks = {setTasks}

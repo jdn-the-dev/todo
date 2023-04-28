@@ -3,9 +3,7 @@ import styles from "../styles/Home.module.css";
 import { task } from "../models/task";
 
 const TasksList: FC<{ taskList: task[], setTasks: React.Dispatch<React.SetStateAction<task[]>>, setCurrentTaskID: React.Dispatch<React.SetStateAction<number>>, setInputTitle: React.Dispatch<React.SetStateAction<string>>, setInputDescription: React.Dispatch<React.SetStateAction<string>>, setEditStatus: React.Dispatch<React.SetStateAction<boolean>>}> = ({ taskList, setTasks, setCurrentTaskID, setInputTitle, setInputDescription, setEditStatus}) => {
-
-
-
+    //Prepare the form fields to edit data that has already been inputed
     const prepareFormForEditTask = (id: number, payload: any) => {
         const {title, description} : {title: string, description: string} = payload;
     
@@ -14,7 +12,7 @@ const TasksList: FC<{ taskList: task[], setTasks: React.Dispatch<React.SetStateA
         setEditStatus(true);
         setCurrentTaskID(id);
       }
-    
+    //Delete a task that is already in the task list
     const deleteTask = (id: number) => {
         setTasks((prev: any) => prev.filter((task: task) => task.id !== id));
       }
